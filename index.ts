@@ -6,7 +6,7 @@ import * as cors from 'cors';
 import * as helmet from 'helmet';
 import * as cookieParser from "cookie-parser"
 import { UserController } from '@controller/user.controller';
-import { Controller } from '@decorator/controller.decorator';
+import { IController } from '@controller/controller';
 import { RouteDefinition } from '@model/route.model';
 import { Injector } from '@util/injector';
 import * as dotenv from "dotenv";
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({extended: true}));
   UserController
 ].forEach(controller => {
   // This is our instantiated class
-  const instance                       = Injector.resolve<Controller>(controller);
+  const instance                       = Injector.resolve<IController>(controller);
   // The prefix saved to our controller
   const prefix                         = Reflect.getMetadata('prefix', controller);
   // Our `routes` array containing all our routes for this controller

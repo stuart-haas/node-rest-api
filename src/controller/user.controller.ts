@@ -1,9 +1,10 @@
 import { Controller, Get, Post, Middleware } from '@decorator/index';
 import { Request, Response } from 'express';
 import { VerifyToken, SignToken } from '@middleware/auth.middleware';
+import { IController } from '@controller/controller';
 
 @Controller('users')
-export class UserController implements Controller {
+export class UserController implements IController {
 
   @Get()
   @Middleware([VerifyToken])

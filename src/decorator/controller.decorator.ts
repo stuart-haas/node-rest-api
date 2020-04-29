@@ -1,5 +1,3 @@
-export interface Controller {}
-
 export const Controller = (prefix: string = ''): ClassDecorator => {
   return (target: any) => {
     Reflect.defineMetadata('target', target, target);
