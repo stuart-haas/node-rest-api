@@ -1,6 +1,4 @@
-import { Controller } from '@decorator/controller.decorator';
-import { Get, Post } from '@decorator/route.decorator';
-import { Middleware } from '@decorator/middleware.decorator';
+import { Controller, Get, Post, Middleware } from '@decorator/index';
 import { Request, Response } from 'express';
 import { VerifyToken, SignToken } from '@middleware/auth.middleware';
 
