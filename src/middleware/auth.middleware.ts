@@ -30,10 +30,10 @@ export function SignToken(req:Request, res:Response, next:NextFunction) {
   const jwtExpiration = parseInt(process.env.JWT_EXPIRATION);
 
   const token = jwt.sign({ username}, process.env.JWT_KEY, {
-    algorithm: 'HS256',
-    expiresIn: jwtExpiration
+    algorithm:'HS256',
+    expiresIn:jwtExpiration
   });
 
-  res.cookie('token', token, { maxAge: jwtExpiration * 1000 });
+  res.cookie('token', token, { maxAge:jwtExpiration * 1000 });
   return next();
 }

@@ -1,4 +1,4 @@
-import { Type } from '@decorator/index'
+import { Type } from '@interface/index'
 
 export const Injector = new class {
   /**
@@ -6,7 +6,7 @@ export const Injector = new class {
    * @param {Type<any>} target
    * @returns {T}
    */
-  resolve<T>(target: Type<any>): T {
+  resolve<T>(target:Type<any>):T {
     // tokens are required dependencies, while injections are resolved tokens from the Injector
     let tokens = Reflect.getMetadata('design:paramtypes', target) || [],
       injections = tokens.map(token => Injector.resolve<any>(token));

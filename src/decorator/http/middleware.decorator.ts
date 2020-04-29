@@ -1,5 +1,5 @@
-export const Middleware = (middleware: Function[]): MethodDecorator => {
-  return (target, propertyKey: string): void => {
+export const Middleware = (middleware:Function[]): MethodDecorator => {
+  return (target, propertyKey:string):void => {
     if (!Reflect.hasMetadata('middleware', target.constructor)) {
       Reflect.defineMetadata('middleware', [], target.constructor, propertyKey);
     }
