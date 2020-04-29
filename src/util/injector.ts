@@ -1,4 +1,4 @@
-import { Type } from '@util/index';
+import { Type } from '@decorator/generic.decorator'
 
 export const Injector = new class {
   /**
