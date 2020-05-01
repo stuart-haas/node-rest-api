@@ -27,7 +27,7 @@ export const Middleware = (middleware:Function[]) : MethodDecorator => {
   };
 };
 
-export const RouteMap = (metadata:Route) : MethodDecorator => {
+const RouteMap = (metadata:Route) : MethodDecorator => {
   return (target:object, propertyKey:string):void => {
     if (!Reflect.hasMetadata('routes', target.constructor)) {
       Reflect.defineMetadata('routes', [], target.constructor);
@@ -52,7 +52,7 @@ const createRouteDecorator = (method:RequestMethod) => (path?:string) : MethodDe
   });
 }
 
-const requestMethodToString = (method:RequestMethod) => {
+function requestMethodToString (method:RequestMethod):string {
   return RequestMethod[method].toString().toLowerCase()
 }
 
