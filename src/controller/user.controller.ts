@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import { Controller, Get, Post, Middleware } from '@decorator/index';
+import { Controller, Get, Post, Middleware } from '@common/decorator';
 import { VerifyToken, SignToken } from '@middleware/auth.middleware';
-import { Controller as IController } from '@interface/index';
+import { Controller as IController } from '@common/interface';
 import { Logger } from '@service/logger.service';
 
 @Controller('users')

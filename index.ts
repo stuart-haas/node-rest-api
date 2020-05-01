@@ -6,8 +6,8 @@ import * as cors from 'cors';
 import * as helmet from 'helmet';
 import * as cookieParser from "cookie-parser"
 import { UserController } from '@controller/user.controller';
-import { Route, Controller } from '@interface/index';
-import { Injector } from '@util/injector';
+import { Route, Controller } from '@common/interface';
+import { Injector } from 'common/injector';
 import * as dotenv from "dotenv";
 
 dotenv.config()

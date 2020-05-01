@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from 'express';
 import * as jwt from 'jsonwebtoken'; 
 
 export function VerifyToken(req:Request, res:Response, next:NextFunction) {
@@ -8,9 +8,8 @@ export function VerifyToken(req:Request, res:Response, next:NextFunction) {
     return res.status(401).end();
   }
 
-  var payload;
   try {
-    payload = jwt.verify(token, process.env.JWT_KEY);
+    jwt.verify(token, process.env.JWT_KEY);
   } catch(e) {
     if(e instanceof jwt.JsonWebTokenError) {
       return res.status(401).end();
@@ -30,10 +29,10 @@ export function SignToken(req:Request, res:Response, next:NextFunction) {
   const jwtExpiration = parseInt(process.env.JWT_EXPIRATION);
 
   const token = jwt.sign({ username}, process.env.JWT_KEY, {
-    algorithm:'HS256',
-    expiresIn:jwtExpiration
+    algorithm: 'HS256',
+    expiresIn: jwtExpiration
   });
 
-  res.cookie('token', token, { maxAge:jwtExpiration * 1000 });
+  res.cookie('token', token, { maxAge: jwtExpiration * 1000 });
   return next();
 }

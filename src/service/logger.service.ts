@@ -1,4 +1,4 @@
-import { Service } from '@decorator/index';
+import { Service } from '@common/decorator';
 
 @Service()
 export class Logger {

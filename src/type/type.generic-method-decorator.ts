@@ -1,1 +1,0 @@
-export type GenericMethodDecorator<T> = (target:T, propertyKey:string) => void;

@@ -1,4 +1,8 @@
-import { Type } from '@interface/index'
+export interface Type<T> {
+  new(...args:any[]):T;
+}
+
+export type Injectable<T> = (target:T) => void;
 
 export const Injector = new class {
   /**

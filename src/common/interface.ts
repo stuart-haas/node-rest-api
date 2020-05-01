@@ -1,4 +1,6 @@
-import { RequestHandler } from "express";
+import { RequestHandler } from 'express';
+
+export interface Controller {}
 
 export interface Route {
   path:string;
