@@ -11,13 +11,13 @@ export class UserController implements IController {
 
   @Get()
   @Middleware([VerifyToken])
-  public index(req:Request, res:Response) {
+  getAll(req:Request, res:Response) {
     res.status(200).send({data:'Viewing all users'});
   }
 
-  @Post('login')
+  @Post()
   @Middleware([SignToken])
-  public create(req:Request, res:Response) {
+  post(req:Request, res:Response) {
     res.status(200).send({data:'User logged in'});
   }
 }

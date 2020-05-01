@@ -32,7 +32,7 @@ const RouteMap = (metadata:Route) : MethodDecorator => {
     if (!Reflect.hasMetadata('routes', target.constructor)) {
       Reflect.defineMetadata('routes', [], target.constructor);
     }
-    const path = metadata.path ? '/' + metadata.path :'/';
+    const path = metadata.path ? '/' + metadata.path : '/';
     const method =  metadata.method ? metadata.method : requestMethodToString(RequestMethod.GET);
     const routes = Reflect.getMetadata('routes', target.constructor) as Array<Route>;
     routes.push({
