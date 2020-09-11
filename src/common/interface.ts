@@ -1,10 +1,10 @@
-import { RequestHandler, Request, Response } from 'express';
+import { RequestHandler, Request, Response } from "express"
 
 export interface Controller {}
 
 export interface Route {
-  path:string;
+  path:string
   method:string
-  action?:string | symbol;
-  middlewares?:RequestHandler[];
+  action?:string | symbol
+  middlewares?:RequestHandler[]
 }

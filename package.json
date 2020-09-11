@@ -1,7 +1,7 @@
 {
-  "name": "ts-node",
+  "name": "node-rest-api",
   "version": "1.0.0",
-  "description": "ts node",
+  "description": "Node Rest Api",
   "main": "index.ts",
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register index.ts",
